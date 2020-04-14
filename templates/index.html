@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Facturas</title>
+
+        <script>
+        function check(){
+            const edCIF = document.getElementById("edCIF");
+            const edNombre = document.getElementById("edNombre");
+            const edDireccion = document.getElementById("edDireccion");
+            const edPoblacion = document.getElementById("edPoblacion");
+            const edProvincia = document.getElementById("edProvincia");
+            const edCodigoPostal = document.getElementById("edCodigoPostal");
+            const edPais = document.getElementById("edPais");
+            const edPersonaContacto = document.getElementById("edPersonaContacto");
+            const edEmail = document.getElementById("edEmail");
+            const edTelefono = document.getElementById("edTelefono");
+            const edConcepto = document.getElementById("edConcepto");
+            const edPrecio = document.getElementById("edPrecio");
+            const edUnidades = document.getElementById("edUnidades");
+            const edImporteBruto = document.getElementById("edImporteBruto");
+            const edIVA = document.getElementById("edIVA");
+            const edImporteTotal = document.getElementById("edImporteTotal");
+
+            if (edCIF.value.trim().length == 0) {
+                return false;
+            }
+            if (edNombre.value.trim().length == 0) {
+                return false;
+            }
+            if (edDireccion.value.trim().length == 0) {
+                return false;
+            }
+            if (edPoblacion.value.trim().length == 0) {
+                return false;
+            }
+            if (edProvincia.value.trim().length == 0) {
+                return false;
+            }
+            if (isNaN(edCodigoPostal.value) || (edCodigoPostal.value <= 0)) {
+                return false;
+            }
+            if (edPais.value.trim().length == 0) {
+                return false;
+            }
+            if (edPersonaContacto.value.trim().length == 0) {
+                return false;
+            }
+            if (edEmail.value.trim().length == 0) {
+                return false;
+            }
+            if (isNaN(edTelefono.value) || (edTelefono.value <= 0)) {
+                return false;
+            }
+            if (edConcepto.value.trim().length == 0) {
+                return false;
+            }
+            if (isNaN(edPrecio.value) || (edPrecio.value <= 0)) {
+                return false;
+            }
+            if (isNaN(edUnidades.value) || (edUnidades.value <= 0)) {
+                return false;
+            }
+            if (isNaN(edImporteBruto.value) || (edImporteBruto.value <= 0)) {
+                return false;
+             }
+            if (isNaN(edIVA.value) || (edIVA.value <= 0)) {
+                return false;
+            }
+            if (isNaN(edImporteTotal.value) || (edImporteTotal.value <= 0)) {
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>FACTURA</h1>
+    <form id="frmFacturas" action="/factura" method="post" onsubmit="return check()">
+        <label for="edCIF">CIF</label>
+        <input type="text" id="edCIF" name="edCIF" />
+
+        <label for="edNombre">Nombre</label>
+        <input type="text" id="edNombre" name="edNombre">
+
+        <label for="edDireccion">Dirección</label>
+        <input type="text" id="edDireccion" name="edDireccion">
+        <br>
+        <label for="edPoblacion">Poblacion</label>
+        <input type="text" id="edPoblacion" name="edPoblacion">
+
+        <label for="edProvincia">Provincia</label>
+        <input type="text" id="edProvincia" name="edProvincia">
+
+        <label for="edCodigoPostal">Código Postal</label>
+        <input type="number" id="edCodigoPostal" name="edCodigoPostal">
+
+        <label for="edPais">País</label>
+        <input type="text" id="edPais" name="edPais">
+        <br>
+        <label for="edPersonaContacto">Persona de contacto</label>
+        <input type="text" id="edPersonaContacto" name="edPersonaContacto">
+
+        <label for="edEmail">Email</label>
+        <input type="text" id="edEmail" name="edEmail">
+
+        <label for="edTelefono">Teléfono</label>
+        <input type="text" id="edTelefono" name="edTelefono">
+
+        <h3>Línea de detalle</h3>
+
+        <label for="edConcepto">Concepto</label>
+        <input type="text" id="edConcepto" name="edConcepto">
+
+        <label for="edPrecio">Precio por unidad</label>
+        <input type="number" id="edPrecio" name="edPrecio">
+
+        <label for="edUnidades">Unidades</label>
+        <input type="number" id="edUnidades" name="edUnidades">
+
+        <label for="edImporteBruto">Importe bruto</label>
+        <input type="number" id="edImporteBruto" name="edImporteBruto">
+
+        <label for="edIVA">IVA</label>
+        <input type="number" id="edIVA" name="edIVA">
+
+        <label for="edImporteTotal">Importe Total</label>
+        <input type="number" id="edImporteTotal" name="edImporteTotal">
+
+        <br>
+        <input type="submit" value="Enviar" />
+    </form>
+</body>
+</html>
