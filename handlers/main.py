@@ -20,7 +20,6 @@ from webapp2_extras import jinja2
 
 class MainHandler(webapp2.RequestHandler):
     def post(self):
-        self.response.write("hola")
         cif = self.request.get("edCIF", "Desconocido")
         nombre = self.request.get("edNombre", "Desconocido")
         direccion = self.request.get("edDireccion", "Desconocida")
